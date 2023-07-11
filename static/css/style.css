@@ -1,0 +1,50 @@
+/* Custom CSS */
+.blog-list {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+}
+
+.blog {
+  border: 1px solid #ccc;
+  padding: 10px;
+  width: 100%;
+  max-width: 250px;
+  margin-bottom: 10px;
+}
+
+.blog-image img {
+  width: 100%;
+  height: auto;
+}
+
+.blog h2 {
+  font-size: 1.5rem;
+  margin-bottom: 10px;
+}
+
+.blog p {
+  margin-bottom: 5px;
+}
+
+.container {
+  padding: 5px;
+}
+
+.blog-info {
+  display: flex;
+  flex-direction: column;
+}
+
+.blog-content {
+  overflow: hidden;
+  text-overflow: ellipsis;
+  display: -webkit-box;
+  -webkit-line-clamp: 4; /* Adjust the number of lines to display */
+  -webkit-box-orient: vertical;
+  word-wrap: break-word;
+}
+
+.blog .read-more-btn.collapsed {
+  display: none;
+}

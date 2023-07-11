@@ -1,0 +1,46 @@
+<!-- blog_form.html -->
+{% extends 'base.html' %}
+
+{% block content %}
+  <div class="container">
+    <h1 class="text-center mb-4 display-5">
+      {% if object %}Edit{% else %}Create{% endif %} Blog Post
+    </h1>
+    <div class="row justify-content-center">
+      <div class="col-md-6">
+        {% if object.image %}
+          <div class="text-center mb-4">
+            <img src="{{ object.image.url }}" alt="{{ object.title }}" class="img-fluid">
+          </div>
+        {% endif %}
+        <form method="post" enctype="multipart/form-data">
+          {% csrf_token %}
+          <div class="form-group">
+            <label for="id_title">Title:</label>
+            <input type="text" name="title" id="id_title" class="form-control" value="{{ object.title|default:'' }}">
+          </div>
+          <br>
+          <div class="form-group">
+            <label for="id_content">Content:</label>
+            <textarea name="content" id="id_content" class="form-control" rows="5" required>{{ object.content|default:'' }}</textarea>
+          </div>
+          <br>
+          <div class="form-group">
+            <label for="id_image">Image:</label>
+            {% if object.image %}
+              <input type="file" name="image" id="id_image">
+            {% else %}
+              <input type="file" name="image" id="id_image" required>
+            {% endif %}
+          </div>
+          <br>
+          <div class="text-center">
+            <button type="submit" class="btn btn-primary">
+              {% if object %}Update{% else %}Create{% endif %} Post
+            </button>
+          </div>
+        </form>
+      </div>
+    </div>
+  </div>
+{% endblock %}

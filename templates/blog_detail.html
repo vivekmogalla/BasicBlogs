@@ -1,0 +1,24 @@
+<!-- blog_detail.html -->
+{% extends 'base.html' %}
+
+{% block content %}
+  <div class="container">
+    <div class="card">
+      <img src="{{ post.image.url }}" class="card-img-top" alt="{{ post.title }}">
+      <div class="card-body">
+        <h1 class="card-title display-4 text-center mb-4">{{ post.title }}</h1>
+        <div class="card-text blog-content">
+          <p class="lead">{{ post.content|linebreaksbr }}</p>
+        </div>
+        <div class="blog-details">
+          <p class="card-text"><strong>Author:</strong> {{ post.author.username }}</p>
+          <p class="card-text"><strong>Date Published:</strong> {{ post.created_at }}</p>
+          <!-- Display other fields of the blog post as needed -->
+        </div>
+        <div class="text-center">
+          <a href="{% url 'blog_list' %}" class="btn btn-primary">Back to Home</a>
+        </div>
+      </div>
+    </div>
+  </div>
+{% endblock %}

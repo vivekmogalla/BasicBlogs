@@ -1,0 +1,24 @@
+<!-- blog_list.html -->
+{% extends 'base.html' %}
+
+{% block content %}
+  <div class="container">
+    <div class="blog-list">
+      {% for blog in blogs %}
+        <div class="blog">
+          <div class="blog-image">
+            <img src="{{ blog.image.url }}" alt="{{ blog.title }}">
+          </div>
+          <div class="blog-info">
+            <h2>{{ blog.title }}</h2>
+            <p class="blog-content">{{ blog.content|truncatechars:100 }}</p>
+            <p class="full-content" style="display: none;">{{ blog.content }}</p>
+            <button class="btn btn-primary read-more-btn{% if blog.content|length <= 100 %} d-none{% endif %}">Read more</button>
+          </div>
+        </div>
+      {% empty %}
+        <p>No blogs available.</p>
+      {% endfor %}
+    </div>
+  </div>
+{% endblock %}
