@@ -16,37 +16,54 @@ This is a blogging Application that allows users to create, view, update and del
 
 •	Image Upload: Users can upload images to their blog posts
 
+## Getting Started
+
+### Prerequisites
+
+- Python 3.x installed
+- Django installed
+- A modern web browser
+
 ## Installation
-• This Project requires [Python](https://www.python.org/) v3.8+ and [Django](https://www.djangoproject.com/) v4.0.4+ and [Django REST Framework](https://www.django-rest-framework.org/) (Building Web APIs with Django)
 
-• Clone the repository
+<p>This Project requires [Python](https://www.python.org/) v3.8+ and [Django](https://www.djangoproject.com/) v4.0.4+ and [Django REST Framework](https://www.django-rest-framework.org/) (Building Web APIs with Django)</p>
 
-• Navigate to the project directory
+1. Clone the repository:
 
-• Create a virtual environment: 
+        git clone https://github.com/vivekmogalla/AccountingWebsite.git
 
-```bash
-python -m venv evn
-```
-• Activate the virtual environment
+2. Navigate to the Project directory
+   
+        cd AccountingWorld
 
-• Install the project dependencies:
+3. Install python virtual environment using pip command
+ 
+       pip install virtualenv (same for linux and windows)
 
-```bash
-  pip install -r requirements.txt
-```
+4. Create a Python virtual environment
+ 
+       virtualenv env (same for linux and windows)
 
-• Run database migrations 
+5. Activate the virtual environment
+ 
+       cd env/scripts/.activate (windows)
+       source env/bin/activate (Linux)
 
-```bash
-  python manage.py migrate
-```
+6. Install the required Python packages
 
-• Start the development server
+        pip install -r requirements.txt
 
-```bash
-  python manage.py runserver
-```
+7. Run database migrations
+
+        python manage.py migrate
+
+8. Create a superuser accont (for admin access)
+
+        python manage.py createsuperuser
+
+9. Start the development server:
+
+        python manage.py runserver
 
 ## Usage
 
